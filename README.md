@@ -207,9 +207,7 @@ sudo service httpd restart
 
 ## Prerequisites
 
-- AWS account with
-
- necessary permissions.
+- AWS account withnecessary permissions.
 - Basic understanding of AWS services and networking concepts.
 - Access to the GitHub repository for scripts and configurations.
 
