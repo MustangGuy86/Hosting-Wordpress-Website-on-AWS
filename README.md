@@ -3,6 +3,7 @@
 # WordPress Website Deployment on AWS
 
 
+
 ![Architecture Diagram](2._Host_a_WordPress_Website_on_AWS.png)
 
 
