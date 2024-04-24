@@ -10,7 +10,9 @@ This project involves hosting a WordPress website on AWS using various services 
 
 ## Deployment Scripts
 
-### Script for Installing WordPress
+### WordPress Installation Script
+
+This script is used for the initial setup of the WordPress application on an EC2 instance. It includes steps for installing Apache, PHP, MySQL, and mounting the Amazon EFS to the instance.
 
 ```bash
 # create to root user
@@ -91,6 +93,9 @@ sudo service httpd restart
 ```
 
 ### Script for Auto Scaling Group Launch Template
+
+This script is included in the launch template for the Auto Scaling Group, ensuring that new instances are configured correctly with the necessary software and settings.
+
 
 ```bash
 #!/bin/bash
@@ -240,6 +245,6 @@ wordpress-aws-deployment/
 
 ## License
 
-This project is licensed under the [MIT License](link_to_license).
+This project is licensed under the [MIT License] - see the LICENSE file for details .
 
 ---
