@@ -1,69 +1,18 @@
+Sure, here's the updated README file with the Contributors section removed:
+
+---
+
 # WordPress Website Deployment on AWS
+
+[Architecture Diagram](2._Host_a_WordPress_Website_on_AWS.png)
 
 ## Overview
 
 This project involves hosting a WordPress website on AWS using various services and configurations. The deployment is designed to ensure high availability, scalability, security, and reliability of the web application.
 
-## Architecture Diagram
-
-![Architecture Diagram](2._Host_a_WordPress_Website_on_AWS.png)
-
-## Deployment Steps
-
-1. **Virtual Private Cloud (VPC)**:
-   - Configured a VPC with public and private subnets across two availability zones (AZs).
-
-2. **Internet Gateway**:
-   - Deployed an Internet Gateway to facilitate connectivity between VPC instances and the wider Internet.
-
-3. **Security Groups**:
-   - Established Security Groups as a network firewall mechanism.
-
-4. **Availability Zones**:
-   - Leveraged two AZs for enhanced system reliability and fault tolerance.
-
-5. **Public Subnets**:
-   - Utilized Public Subnets for infrastructure components like NAT Gateway and Application Load Balancer (ALB).
-
-6. **EC2 Instance Connect Endpoint**:
-   - Implemented EC2 Instance Connect Endpoint for secure connections to assets within public and private subnets.
-
-7. **Private Subnets**:
-   - Positioned web servers (EC2 instances) within Private Subnets for enhanced security.
-
-8. **NAT Gateway**:
-   - Enabled instances in private subnets to access the Internet via the NAT Gateway.
-
-9. **Website Hosting**:
-   - Hosted the WordPress website on EC2 Instances.
-
-10. **Load Balancing**:
-    - Utilized Application Load Balancer (ALB) and a target group for evenly distributing web traffic to an Auto Scaling Group across multiple AZs.
-
-11. **Auto Scaling Group**:
-    - Employed an Auto Scaling Group to manage EC2 instances automatically, ensuring availability, scalability, fault tolerance, and elasticity.
-
-12. **Version Control**:
-    - Stored web files on GitHub for version control and collaboration.
-
-13. **Certificate Manager**:
-    - Secured application communications using AWS Certificate Manager.
-
-14. **Simple Notification Service (SNS)**:
-    - Configured SNS to alert about activities within the Auto Scaling Group.
-
-15. **DNS Configuration**:
-    - Registered the domain name and set up DNS records using Route 53.
-
-16. **Shared File System**:
-    - Used Amazon EFS for a shared file system.
-
-17. **Database**:
-    - Utilized Amazon RDS for the database.
-
 ## Deployment Scripts
 
-### Installing WordPress
+### Script for Installing WordPress
 
 ```bash
 # create to root user
@@ -143,7 +92,7 @@ sudo vi /var/www/html/wp-config.php
 sudo service httpd restart
 ```
 
-### Auto Scaling Group Launch Template
+### Script for Auto Scaling Group Launch Template
 
 ```bash
 #!/bin/bash
@@ -205,9 +154,64 @@ chown apache:apache -R /var/www/html
 sudo service httpd restart
 ```
 
+## Deployment Steps
+
+1. **Virtual Private Cloud (VPC)**:
+   - Configured a VPC with public and private subnets across two availability zones (AZs).
+
+2. **Internet Gateway**:
+   - Deployed an Internet Gateway to facilitate connectivity between VPC instances and the wider Internet.
+
+3. **Security Groups**:
+   - Established Security Groups as a network firewall mechanism.
+
+4. **Availability Zones**:
+   - Leveraged two AZs for enhanced system reliability and fault
+
+ tolerance.
+
+5. **Public Subnets**:
+   - Utilized Public Subnets for infrastructure components like NAT Gateway and Application Load Balancer (ALB).
+
+6. **EC2 Instance Connect Endpoint**:
+   - Implemented EC2 Instance Connect Endpoint for secure connections to assets within public and private subnets.
+
+7. **Private Subnets**:
+   - Positioned web servers (EC2 instances) within Private Subnets for enhanced security.
+
+8. **NAT Gateway**:
+   - Enabled instances in private subnets to access the Internet via the NAT Gateway.
+
+9. **Website Hosting**:
+    - Hosted the WordPress website on EC2 Instances.
+
+10. **Load Balancing**:
+    - Utilized Application Load Balancer (ALB) and a target group for evenly distributing web traffic to an Auto Scaling Group across multiple AZs.
+
+11. **Auto Scaling Group**:
+    - Employed an Auto Scaling Group to manage EC2 instances automatically, ensuring availability, scalability, fault tolerance, and elasticity.
+
+12. **Version Control**:
+    - Stored web files on GitHub for version control and collaboration.
+
+13. **Certificate Manager**:
+    - Secured application communications using AWS Certificate Manager.
+
+14. **Simple Notification Service (SNS)**:
+    - Configured SNS to alert about activities within the Auto Scaling Group.
+
+15. **DNS Configuration**:
+    - Registered the domain name and set up DNS records using Route 53.
+
+16. **Shared File System**:
+    - Used Amazon EFS for a shared file system.
+
+17. **Database**:
+    - Utilized Amazon RDS for the database.
+
 ## Prerequisites
 
-- AWS account withnecessary permissions.
+- AWS account with necessary permissions.
 - Basic understanding of AWS services and networking concepts.
 - Access to the GitHub repository for scripts and configurations.
 
@@ -217,5 +221,27 @@ sudo service httpd restart
 2. Modify scripts and configurations as per your requirements.
 3. Execute the scripts to deploy the WordPress website on AWS.
 
+## Repository Structure
+
+```
+wordpress-aws-deployment/
+├── scripts/
+│   ├── install-wordpress.sh
+│   └── launch-template.sh
+├── diagrams/
+│   └── architecture-diagram.png
+├── README.md
+└── LICENSE
+```
+
+## Additional Resources
+
+- [AWS Documentation](https://docs.aws.amazon.com/)
+- [WordPress Official Documentation](https://wordpress.org/support/)
+- [GitHub Actions for CI/CD](https://docs.github.com/en/actions)
+
+## License
+
+This project is licensed under the [MIT License](link_to_license).
 
 ---
