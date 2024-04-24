@@ -8,6 +8,65 @@
 
 This project involves hosting a WordPress website on AWS using various services and configurations. The deployment is designed to ensure high availability, scalability, security, and reliability of the web application.
 
+## Architecture
+
+The architecture of the WordPress deployment on AWS consists of the following components:
+
+1. **Virtual Private Cloud (VPC)**:
+   - Configured with public and private subnets across two availability zones (AZs).
+
+2. **Internet Gateway**:
+   - Facilitates connectivity between VPC instances and the wider Internet.
+
+3. **Security Groups**:
+   - Network firewall mechanism for controlling traffic to EC2 instances.
+
+4. **Availability Zones**:
+   - Utilized for enhanced system reliability and fault tolerance.
+
+5. **Public Subnets**:
+   - Houses infrastructure components like NAT Gateway and Application Load Balancer (ALB).
+
+6. **EC2 Instance Connect Endpoint**:
+   - Enables secure connections to assets within public and private subnets.
+
+7. **Private Subnets**:
+   - Hosts web servers (EC2 instances) for enhanced security.
+
+8. **NAT Gateway**:
+   - Allows instances in private subnets to access the Internet.
+
+9. **Website Hosting**:
+   - WordPress website hosted on EC2 Instances.
+
+10. **Load Balancing**:
+    - Application Load Balancer (ALB) distributes web traffic to Auto Scaling Group across multiple AZs.
+
+11. **Auto Scaling Group**:
+    - Manages EC2 instances for availability, scalability, fault tolerance, and elasticity.
+
+12. **Version Control**:
+    - Web files stored on GitHub for version control and collaboration.
+
+13. **Certificate Manager**:
+    - Secures application communications using AWS Certificate Manager.
+
+14. **Simple Notification Service (SNS)**:
+    - Alerts about activities within Auto Scaling Group.
+
+15. **DNS Configuration**:
+    - Registers domain name and sets up DNS records using Route 53.
+
+16. **Shared File System**:
+    - Amazon EFS used for a shared file system.
+
+17. **Database**:
+    - Amazon RDS utilized for the database.
+
+
+This architecture ensures a robust and scalable WordPress deployment on AWS.
+
+
 ## Deployment Scripts
 
 ### WordPress Installation Script
